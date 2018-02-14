@@ -72,16 +72,23 @@ h4 {
   text-align: center;
 }
 
+h1,
+#skills li,
+#education li {
+  border-radius: 0.4rem;
+}
+
 
 /*HEADER*/
 
 header {
-  background-color: var(--blue);
+  background-color: var(--brightest);
+  border-bottom: 1px solid var(--darkest);
   font-size: 1.4rem;
   justify-content: space-between;
   left: 0;
   margin: 0 auto;
-  /* opacity: 0.95; */
+  opacity: 0.95;
   position: fixed;
   right: 0;
   z-index: 15;
@@ -118,8 +125,18 @@ header picture {
 }
 
 header a {
+  color: var(--darkest);
   margin: 0.5rem;
   transition: color 0.2s;
+}
+
+header a:visited {
+  color: var(--darkest);
+}
+
+header a:focus,
+header a:hover {
+  color: var(--blue);
 }
 
 
@@ -184,24 +201,35 @@ li a {
 #jumbotron {
   align-items: center;
   display: flex;
-  height: 39.0625rem; /* 625px */
   justify-content: center;
   padding-top: 0;
   padding-bottom: 0;
 }
 
-#jumbotron .container div {
-  background-image: url('../images/jumbotron-1280x625.jpg');
+#jumbotron > div {
+  background-color: var(--darkest);
+  display: flex;
+  height: 39.0625rem;
+  width: 100%;
+}
+
+#jumbotron-background {
+  background-image: url('../images/jumbotron-1920x938.jpg');
+  background-position: center;
   background-repeat: no-repeat;
-  height: 39.0625rem; /* 625px */
-  max-width: var(--container);
-  opacity: 0.6;
+  background-size: cover;
+  height: inherit;
+  opacity: 0.35;
   position: absolute;
   width: 100%;
   z-index: 5;
 }
 
 #jumbotron h1 {
+  background-color: var(--brightest);
+  color: var(--darkest);
+  opacity: 0.75;
+  padding: 0.5rem 1rem 1.1rem 1rem;
   z-index: 10;
 }
 
