@@ -49,6 +49,7 @@ h1 {
   font-family: var(--heading);
   font-size: 6rem;
   font-weight: bold;
+  margin: auto;
 }
 
 h2 {
@@ -79,10 +80,9 @@ header {
   justify-content: space-between;
   left: 0;
   margin: 0 auto;
-  opacity: 0.95;
+  /* opacity: 0.95; */
   position: fixed;
   right: 0;
-  max-width: var(--container);
   z-index: 15;
 }
 
@@ -90,8 +90,23 @@ header p {
   font-family: var(--name);
 }
 
+.container {
+  align-items: center;
+  flex-direction: row;
+  justify-content:space-between;
+  margin: 0 auto;
+  max-width: var(--container);
+  width: 100%;
+}
+
+header .container,
+#jumbotron .container,
+footer .container {
+  display: flex;
+}
+
 header,
-header div,
+header div div,
 header ul {
   align-items: center;
   display: flex;
@@ -113,7 +128,6 @@ main {
   margin: 0 auto;
   position: relative;
   top: 50px;
-  max-width: var(--container);
 }
 
 main a:visited {
@@ -124,6 +138,7 @@ main a:visited {
  }
 
 section {
+  margin: auto;
   padding-top: 6rem;
   padding-bottom: 4rem;
 }
@@ -174,11 +189,11 @@ li a {
   padding-bottom: 0;
 }
 
-#jumbotron div { background-image: url('../images/jumbotron-1280x625.jpg');
-  background-position: center;
+#jumbotron .container div {
+  background-image: url('../images/jumbotron-1280x625.jpg');
   background-repeat: no-repeat;
   height: 39.0625rem; /* 625px */
-  opacity: 0.4;
+  opacity: 0.6;
   position: absolute;
   width: 100%;
   z-index: 5;
@@ -319,6 +334,10 @@ footer {
   justify-content: center;
   align-items: center;
   height: 10rem;
+}
+
+footer .container {
+  justify-content: center;
 }
 
 footer i {
