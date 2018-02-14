@@ -50,6 +50,7 @@ h1 {
   font-size: 6rem;
   font-weight: bold;
   margin: auto;
+  text-align: center;
 }
 
 h2 {
@@ -193,6 +194,7 @@ li a {
   background-image: url('../images/jumbotron-1280x625.jpg');
   background-repeat: no-repeat;
   height: 39.0625rem; /* 625px */
+  max-width: var(--container);
   opacity: 0.6;
   position: absolute;
   width: 100%;
