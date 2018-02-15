@@ -13,8 +13,9 @@ html {
 
   /* Font Family */
   --name: 'Open Sans', sans-serif;
-  --form-text: 'Lora', serif;
-  --heading: 'Montserrat', Verdana, sans-serif;
+  --form-text: 'Noto Sans', sans-serif;
+  --jumbotron-heading: 'Montserrat', Verdana, sans-serif;
+  --heading: 'Raleway', Verdana, sans-serif;
   --main-text: 'Roboto', Verdana, sans-serif;
 
   /* Container */
@@ -46,7 +47,7 @@ p {
 }
 
 h1 {
-  font-family: var(--heading);
+  font-family: var(--jumbotron-heading);
   font-size: 6rem;
   font-weight: bold;
   margin: auto;
@@ -57,12 +58,16 @@ h2 {
   font-family: var(--heading);
   font-size: 3.5rem;
   font-weight: bold;
+  letter-spacing: 0.15rem;
   text-align: center;
 }
 
-h3 {
+h3,
+figcaption {
   font-family: var(--heading);
   font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 0.08rem;
   text-align: center;
 }
 
