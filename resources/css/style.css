@@ -62,8 +62,7 @@ h2 {
   text-align: center;
 }
 
-h3,
-figcaption {
+h3 {
   font-family: var(--heading);
   font-size: 2.2rem;
   font-weight: bold;
@@ -253,8 +252,12 @@ li a {
 }
 
 #projects li {
-  height: 27rem; /* 1280px container */
   margin: 3rem 2rem 0 2rem;
+}
+
+#projects figure {
+  display: grid;
+  height: 100%;
 }
 
 #projects img {
@@ -268,19 +271,16 @@ li a {
 }
 
 #projects figcaption {
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 0.8rem;
-  padding: 0.5rem;
+  height: 7rem;
+}
+
+#projects h3 {
+  margin: 1.5rem 0 0.5rem 0;
 }
 
 #projects p {
   text-align: center;
   padding: 0.5rem;
-}
-
-#projects p:hover {
-  cursor: pointer;
 }
 
 
