@@ -355,18 +355,51 @@ li a {
   display: grid;
   margin: 3rem 2rem 0 2rem;
   padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-#education li div {
+#education h3 {
+  margin-bottom: 2rem;
+}
+
+.education-info {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   min-height: 10rem;
-  padding: 2rem;
+  padding: 0 2rem;
+}
+
+.certificate-box {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 2rem 0 2rem;
 }
 
 #education p {
   font-size: 1.5rem;
+}
+
+#education a {
+  background-color: var(--darkest);
+  border: 2px solid var(--darkest);
+  border-radius: 0.2rem;
+  color: var(--brightest);
+  opacity: 0;
+  padding: 0.25rem 0.7rem;
+  transition: all 0.2s;
+}
+
+#education li:focus a,
+#education li:hover a {
+  opacity: 1;
+}
+
+#education a:focus,
+#education a:hover {
+  background-color: var(--brightest);
+  color: var(--blue)!important;
 }
 
 
