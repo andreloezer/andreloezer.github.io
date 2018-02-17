@@ -6,10 +6,14 @@ html {
   /* Color Variables */
   --form-background: #fcfcfc;
   --brightest: #eaeaea;
+    --brightestRGBA: rgba(234,234,234,0.95);
+
   --bright: #e0e0e0;
   --darkest: #1b1b1b;
+    --darkestRGBA: rgba(27,27,27,0.8);
+
   --blue: #4c78b3;
-  --darkblue: #172436;
+    --blueRGBA: rgba(76,120,179,0.8);
 
   /* Font Family */
   --name: 'Open Sans', sans-serif;
@@ -46,33 +50,41 @@ p {
   font-family: var(--main-text);
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--heading);
+  font-weight: bold;
+  text-align: center;
+}
+
 h1 {
   font-family: var(--jumbotron-heading);
   font-size: 6rem;
-  font-weight: bold;
   margin: auto;
-  text-align: center;
 }
 
 h2 {
-  font-family: var(--heading);
   font-size: 3.5rem;
-  font-weight: bold;
   letter-spacing: 0.15rem;
-  text-align: center;
 }
 
 h3 {
-  font-family: var(--heading);
   font-size: 2.2rem;
-  font-weight: bold;
   letter-spacing: 0.08rem;
-  text-align: center;
+}
+
+h4 {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  text-align: left;
 }
 
 h1:hover,
 h2:hover,
 h3:hover,
+h4:hover,
 p:hover {
   cursor: default;
 }
@@ -89,13 +101,14 @@ textarea {
 /*HEADER*/
 
 header {
-  background-color: var(--brightest);
+  /* background-color: var(--brightest); */
+  background-color: var(--brightestRGBA);
   border-bottom: 1px solid var(--darkest);
   font-size: 1.4rem;
   justify-content: space-between;
   left: 0;
   margin: 0 auto;
-  opacity: 0.95;
+  /* opacity: 0.95; */
   position: fixed;
   right: 0;
   z-index: 15;
@@ -191,15 +204,15 @@ li {
   max-width: 30rem;
 }
 
-li:focus,
-li:hover {
-  background-color: var(--bright);
-  color: var(--darkest);
-}
-
 li a {
   display: block;
   height: 100%;
+}
+
+.box:focus,
+.box:hover {
+  background-color: var(--bright);
+  color: var(--darkest);
 }
 
 /* Jumbotron */
@@ -234,14 +247,16 @@ li a {
 #jumbotron h1 {
   background-color: var(--brightest);
   color: var(--darkest);
-  opacity: 0.75;
+  opacity: 0.7;
   padding: 0.5rem 1rem 1.1rem 1rem;
-  transition: color 0.2s;
+  transition: all 0.2s;
   z-index: 10;
 }
 
+#jumbotron h1:focus,
 #jumbotron h1:hover {
   color: var(--blue);
+  opacity: 1;
 }
 
 
@@ -256,77 +271,103 @@ li a {
 }
 
 #projects figure {
-  display: grid;
-  height: 100%;
+  height: 20rem;
+  overflow: hidden;
 }
 
 #projects img {
   opacity: 0.5;
-  transition: opacity 0.2s;
+  transition: all 0.4s;
 }
 
-#projects img:focus,
-#projects img:hover {
+#projects img + figcaption {
+  transition: all 0.4s;
+}
+
+#projects figure:focus img,
+#projects figure:hover img {
   opacity: 1;
 }
 
-#projects figcaption {
-  height: 7rem;
+#projects figure:focus figcaption,
+#projects figure:hover figcaption {
+  bottom: 8.9rem;
 }
 
-#projects h3 {
-  margin: 1.5rem 0 0.5rem 0;
+#projects figcaption {
+  background-color: var(--darkestRGBA);
+  color: var(--brightest);
+  padding: 1.2rem;
+  position: relative;
+  bottom: -8.9rem;
+}
+
+#projects h3,
+#projects h4 {
+  margin-bottom: 0.5rem;
 }
 
 #projects p {
-  text-align: center;
-  padding: 0.5rem;
+  margin-bottom: 1rem;
 }
 
+#projects figcaption div {
+  display: flex;
+}
+
+#projects a {
+  background-color: transparent;
+  border: 2px solid var(--brightest);
+  border-radius: 0.2rem;
+  color: var(--brightest);
+  margin-right: 1rem;
+  padding: 0.15rem 0.6rem;
+  transition: all 0.2s;
+}
+
+#projects a:focus,
+#projects a:hover {
+  background-color: var(--brightest);
+  color: var(--blue);
+}
 
 /* Skills */
 
 #skills li {
-  min-height: 13rem;
+  display: grid;
   margin: 3rem 2rem 0 2rem;
+  padding-top: 2rem;
+}
+
+#skills ul div {
+  padding: 2rem 5rem;
 }
 
 #skills p {
   font-size: 1.5rem;
   line-height: 2rem;
-  margin: 1rem 5rem;
   text-align: center;
-}
-
-#skills h3 {
-  margin-top: 1.5rem;
 }
 
 
 /* Education */
 
 #education li {
+  display: grid;
   margin: 3rem 2rem 0 2rem;
-  min-height: 13rem;
+  padding-top: 2rem;
 }
 
-#codecademy a {
-  height: fit-content;
-}
-
-#pucpr,
-#codecademy a {
-  padding: 2rem 0;
+#education li div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 10rem;
+  padding: 2rem;
 }
 
 #education p {
   font-size: 1.5rem;
-  margin: 2rem 0 0 3rem;
-}
-
-#education a h3:hover,
-#education a p:hover {
-  cursor: pointer;
 }
 
 
@@ -352,7 +393,6 @@ form {
 input,
 textarea {
   border-style: none;
-  /* border-radius: 1rem; */
   font-size: 1.5rem;
 }
 
@@ -364,22 +404,26 @@ textarea {
 input:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
 #send {
-  background-color: var(--darkest);
   color: var(--brightest);
   font-family: var(--main-text);
-  min-height: 3rem;
-  transition: background-color 0.2s, color 0.2s;
-  width: 8rem;
+  background-color: var(--darkest);
+  border: 2px solid var(--darkest);
+  height: 2.5rem;
+  transition: all 0.2s;
+  width: 5.5rem;
+}
+
+#send:hover {
+  cursor: pointer;
 }
 
 #send:focus,
 #send:hover {
-  background-color: var(--blue);
-  color: var(--darkest);
-  cursor: pointer;
+  background-color: var(--brightest);
+  color: var(--blue);
 }
 
 /* FOOTER */
@@ -387,7 +431,7 @@ button:focus {
 footer {
   background-color: var(--blue);
   display: flex;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   justify-content: center;
   align-items: center;
   height: 10rem;
