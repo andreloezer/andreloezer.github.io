@@ -182,8 +182,10 @@ section {
 
 section:nth-child(odd){
   background-color: var(--brightest);
+  color: var(--darkest);
 }
 
+footer,
 section:nth-child(even){
   background-color: var(--blue);
   color: var(--brightest);
@@ -199,8 +201,8 @@ ul {
 li {
   background-color: var(--darkest);
   color: var(--brightest);
-  transition: background-color 0.2s, color 0.2s;
-  max-width: 30rem;
+  transition: all 0.2s;
+  width: 30rem;
 }
 
 li a {
@@ -348,6 +350,22 @@ li a {
   text-align: center;
 }
 
+.skills-items h4 {
+  font-weight: 400;
+  margin-bottom: 1rem;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.skills-items h4:focus,
+.skills-items h4:hover {
+  color: var(--blue);
+}
+
+.skills-items h4:last-child {
+  margin-bottom: 0;
+}
+
 
 /* Education */
 
@@ -461,7 +479,6 @@ button:focus {
 /* FOOTER */
 
 footer {
-  background-color: var(--blue);
   display: flex;
   font-size: 3.5rem;
   justify-content: center;
