@@ -90,8 +90,7 @@ p:hover {
 }
 
 h1,
-#skills li,
-#education li,
+li,
 input,
 textarea {
   border-radius: 0.4rem;
@@ -110,10 +109,6 @@ header {
   position: fixed;
   right: 0;
   z-index: 15;
-}
-
-header p {
-  font-family: var(--name);
 }
 
 .container {
@@ -141,6 +136,19 @@ header ul {
 
 header picture {
   height: 3.125rem; /* 50px */
+}
+
+#logo-box a:first-child {
+  display: flex;
+  margin: 0;
+}
+
+#logo-box a:last-child {
+  font-family: var(--name);
+}
+
+header nav {
+  font-size: 1.2rem;
 }
 
 header a {
@@ -272,6 +280,7 @@ li a {
 }
 
 #projects figure {
+  border-radius: 0.4rem;
   height: 20rem;
   overflow: hidden;
 }
@@ -342,12 +351,6 @@ li a {
 
 #skills ul div {
   padding: 2rem 5rem;
-}
-
-#skills p {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  text-align: center;
 }
 
 .skills-items h4 {
