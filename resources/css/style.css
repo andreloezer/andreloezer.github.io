@@ -42,6 +42,12 @@ a:visited {
 a:focus,
 a:hover {
   color: var(--darkest);
+  /* transform: scale(1.2); */
+}
+
+h1:hover,
+main .buttons a:hover {
+  transform: scale(1.2);
 }
 
 a,
@@ -61,7 +67,7 @@ h4 {
 
 h1 {
   font-family: var(--jumbotron-heading);
-  font-size: 6rem;
+  font-size: 5.5rem;
   margin: auto;
 }
 
@@ -147,14 +153,37 @@ header picture {
   font-family: var(--name);
 }
 
-header nav {
+nav {
+  display: flex;
   font-size: 1.2rem;
 }
 
 header a {
   color: var(--darkest);
-  margin: 0.5rem;
-  transition: color 0.2s;
+  margin: 0.7rem;
+  transition: all 0.2s;
+
+  /* Flickering fix */
+    /* -webkit-backface-visibility: hidden; */
+    /* -webkit-transform: translateZ(0) scale(1.0, 1.0); */
+    /* transform: translateZ(0); */
+    transform: translateZ(0) scale(1.0, 1.0);
+    backface-visibility: hidden;
+}
+
+.header-text {
+  transition: all 0.2s;
+}
+
+#logo-box .header-text:hover {
+  /* font-size: 1.6rem; */
+  transform-origin: left;
+  transform: scale(1.2);
+}
+
+nav a:focus,
+nav a:hover {
+  transform: scale(1.2);
 }
 
 header a:visited {
@@ -165,7 +194,6 @@ header a:focus,
 header a:hover {
   color: var(--blue);
 }
-
 
 /* MAIN */
 
@@ -178,7 +206,7 @@ main {
 main a:visited {
   color: inherit;
 }
- main a:focus {
+main a:focus {
   color: inherit;
  }
 
@@ -218,11 +246,17 @@ li a {
   height: 100%;
 }
 
+li:focus,
+li:hover {
+  transform: scale(1.1);
+}
+
 .box:focus,
 .box:hover {
   background-color: var(--bright);
   color: var(--darkest);
 }
+
 
 /* Jumbotron */
 
@@ -350,22 +384,62 @@ li a {
 }
 
 #skills ul div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   padding: 2rem 5rem;
 }
 
-.skills-items h4 {
+#skills h4 {
   font-weight: 400;
   margin-bottom: 1rem;
   text-align: center;
-  transition: all 0.2s;
+  padding: 0.2rem;
+  /* transition: all 0.2s; */
 }
 
-.skills-items h4:focus,
-.skills-items h4:hover {
-  color: var(--blue);
+#skills h4:focus,
+#skills h4:hover {
+  animation: color-change 0.25s forwards;
+  /* animation-iteration-count: infinite; */
+  /* animation-fill-mode: forwards; */
+  /* color: var(--blue); */
 }
 
-.skills-items h4:last-child {
+@keyframes color-change {
+
+  0% {
+    color: var(--darkest);
+  }
+
+  25% {
+    transform: scale(1.1) rotateZ(4deg);
+  }
+
+  50% {
+    transform: scale(1.2) rotateZ(-2.5deg);
+  }
+
+  75% {
+    transform: scale(1.3) rotateZ(1deg);
+  }
+
+  100% {
+    color: var(--blue);
+    transform: scale(1.4) rotateZ(0deg);
+    background-color: var(--brightest);
+    border-radius: 0.2rem;
+    letter-spacing: 0.3rem;
+    /* transform: rotateZ(20deg); */
+    /* border-bottom: 1px solid var(--darkest); */
+    /* font-weight: bold; */
+  }
+  /* 100% {
+    color: var(--darkest);
+  } */
+}
+
+#skills h4:last-child {
   margin-bottom: 0;
 }
 
@@ -465,8 +539,10 @@ button:focus {
   background-color: var(--darkest);
   border: 2px solid var(--darkest);
   height: 2.5rem;
+  /* padding: 0.3rem 0.6rem; */
   transition: all 0.2s;
   width: 5.5rem;
+  /* width: fit-content; */
 }
 
 #send:hover {
@@ -477,6 +553,9 @@ button:focus {
 #send:hover {
   background-color: var(--brightest);
   color: var(--blue);
+  /* font-size: 1.8rem; */
+  transform: scale(1.2);
+  transform-origin: left top;
 }
 
 /* FOOTER */
@@ -495,11 +574,12 @@ footer .container {
 
 footer i {
   margin: 0 1rem;
-  transition: color 0.2s;
+  transition: all 0.2s;
 }
 
 footer i:focus,
 footer i:hover {
+  transform: scale(1.2rem);
   color: var(--bright);
 }
 
