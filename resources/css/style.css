@@ -42,7 +42,6 @@ a:visited {
 a:focus,
 a:hover {
   color: var(--darkest);
-  /* transform: scale(1.2); */
 }
 
 h1:hover,
@@ -164,9 +163,6 @@ header a {
   transition: all 0.2s;
 
   /* Flickering fix */
-    /* -webkit-backface-visibility: hidden; */
-    /* -webkit-transform: translateZ(0) scale(1.0, 1.0); */
-    /* transform: translateZ(0); */
     transform: translateZ(0) scale(1.0, 1.0);
     backface-visibility: hidden;
 }
@@ -176,7 +172,6 @@ header a {
 }
 
 #logo-box .header-text:hover {
-  /* font-size: 1.6rem; */
   transform-origin: left;
   transform: scale(1.2);
 }
@@ -235,6 +230,7 @@ ul {
 }
 
 li {
+  box-shadow: 1px 1px 15px var(--darkest);
   background-color: var(--darkest);
   color: var(--brightest);
   transition: all 0.2s;
@@ -395,15 +391,11 @@ li:hover {
   margin-bottom: 1rem;
   text-align: center;
   padding: 0.2rem;
-  /* transition: all 0.2s; */
 }
 
 #skills h4:focus,
 #skills h4:hover {
   animation: color-change 0.25s forwards;
-  /* animation-iteration-count: infinite; */
-  /* animation-fill-mode: forwards; */
-  /* color: var(--blue); */
 }
 
 @keyframes color-change {
@@ -430,13 +422,7 @@ li:hover {
     background-color: var(--brightest);
     border-radius: 0.2rem;
     letter-spacing: 0.3rem;
-    /* transform: rotateZ(20deg); */
-    /* border-bottom: 1px solid var(--darkest); */
-    /* font-weight: bold; */
   }
-  /* 100% {
-    color: var(--darkest);
-  } */
 }
 
 #skills h4:last-child {
@@ -539,10 +525,8 @@ button:focus {
   background-color: var(--darkest);
   border: 2px solid var(--darkest);
   height: 2.5rem;
-  /* padding: 0.3rem 0.6rem; */
   transition: all 0.2s;
   width: 5.5rem;
-  /* width: fit-content; */
 }
 
 #send:hover {
@@ -553,7 +537,6 @@ button:focus {
 #send:hover {
   background-color: var(--brightest);
   color: var(--blue);
-  /* font-size: 1.8rem; */
   transform: scale(1.2);
   transform-origin: left top;
 }
