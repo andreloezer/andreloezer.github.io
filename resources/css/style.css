@@ -24,6 +24,7 @@ html {
 
   /* Container */
   --container: 80rem; /* 1280px */
+  --jumbotron-height: 44.0625rem;
 
   background-color: var(--darkblue);
   font-size: 16px;
@@ -65,9 +66,17 @@ h4 {
 }
 
 h1 {
+  background-color: var(--brightest);
+  color: var(--darkest);
   font-family: var(--jumbotron-heading);
   font-size: 5.5rem;
   margin: auto;
+  opacity: 0.6;
+  padding: 0.5rem 1rem 1.1rem 1rem;
+  position: relative;
+  transition: all 0.2s;
+  width: fit-content;
+  z-index: 10;
 }
 
 h2 {
@@ -81,7 +90,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   letter-spacing: 0.1rem;
   text-align: left;
 }
@@ -101,35 +110,95 @@ textarea {
   border-radius: 0.4rem;
 }
 
+h1:focus,
+h1:hover {
+  color: var(--blue);
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 1170px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 3rem;
+    padding: 0.5rem 1rem 0.8rem 1rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    /* font-size: 1.8rem; */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    background-color: transparent;
+    border-radius: 0;
+    color: var(--brightest);
+    line-height: 3.5rem;
+    opacity: 1;
+    padding: 1rem;
+    transform: none;
+  }
+  h1:focus,
+  h1:hover {
+    color: var(--brightest);
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
 
 /*HEADER*/
 
 header {
-  background-color: var(--brightestRGBA);
+  background-color: var(--brightest);
   border-bottom: 1px solid var(--darkest);
   font-size: 1.4rem;
   justify-content: space-between;
   left: 0;
   margin: 0 auto;
+  /* padding: 0 1rem; */
   position: fixed;
   right: 0;
+  transition: all 0.2s;
   z-index: 15;
 }
 
-.container {
-  align-items: center;
-  flex-direction: row;
-  justify-content:space-between;
-  margin: 0 auto;
-  max-width: var(--container);
-  width: 100%;
+.navbar-fixed-top {
+  padding: 0.5rem;
+  transition: all 0.2s;
 }
 
-header .container,
-#jumbotron .container,
-footer .container {
-  display: flex;
-  max-width: 100%;
+.navbar-shrink {
+  padding: 0 0.5rem;
+  transition: all 0.2s;
 }
 
 header,
@@ -150,6 +219,7 @@ header picture {
 
 #logo-box a:last-child {
   font-family: var(--name);
+  margin-left: 1rem;
 }
 
 nav {
@@ -159,7 +229,8 @@ nav {
 
 header a {
   color: var(--darkest);
-  margin: 0.7rem;
+  display: inline-block;
+  margin: 0 0.4rem;
   transition: all 0.2s;
 
   /* Flickering fix */
@@ -173,12 +244,12 @@ header a {
 
 #logo-box .header-text:hover {
   transform-origin: left;
-  transform: scale(1.2);
 }
 
+#logo-box .header-text:hover,
 nav a:focus,
 nav a:hover {
-  transform: scale(1.2);
+  transform: scale(1.12);
 }
 
 header a:visited {
@@ -190,12 +261,91 @@ header a:hover {
   color: var(--blue);
 }
 
+nav a {
+  padding: 0.5rem 0.3rem;
+}
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+.mobile a:focus,
+.mobile a:hover {
+  transform: scale(1.2);
+}
+
+.active {
+  background-color: var(--blueRGBA);
+  border-radius: 0.3rem;
+}
+
+@media only screen and (max-width: 800px) {
+  #logo-box .header-text {
+    display: none;
+  }
+  nav {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  nav a {
+    margin: 0 0.3rem;
+    padding: 0;
+  }
+  nav a:focus,
+  nav a:hover {
+    transform: none;
+  }
+  header {
+    padding-left: none;
+    padding-right: none;
+  }
+  .navbar-fixed-top {
+    padding: 0;
+  }
+
+  .navbar-shrink {
+    padding: 0.5rem;
+  }
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: flex;
+    font-size: 1.8rem;
+    justify-content: space-around;
+    width: -webkit-fill-available;
+  }
+}
+
+
 /* MAIN */
 
 main {
   margin: 0 auto;
   position: relative;
-  top: 50px;
+  top: 3.125rem;
+}
+
+.container {
+  align-items: center;
+  flex-direction: row;
+  justify-content:space-between;
+  margin: 0 auto;
+  max-width: var(--container);
+  width: 100%;
+}
+
+header .container,
+#jumbotron .container,
+footer .container {
+  display: flex;
+  max-width: 100%;
 }
 
 main a:visited {
@@ -207,8 +357,7 @@ main a:focus {
 
 section {
   margin: auto;
-  padding-top: 6rem;
-  padding-bottom: 4rem;
+  padding: 6rem 0;
 }
 
 section:nth-child(odd){
@@ -242,15 +391,38 @@ li a {
   height: 100%;
 }
 
-li:focus,
-li:hover {
+li:nth-child(odd):focus,
+li:nth-child(odd):hover {
   transform: scale(1.1);
+  transform-origin: left;
+}
+
+li:nth-child(even):focus,
+li:nth-child(even):hover {
+  transform: scale(1.1);
+  transform-origin: right;
 }
 
 .box:focus,
 .box:hover {
   background-color: var(--bright);
   color: var(--darkest);
+}
+
+@media only screen and (max-width: 1170px) {
+  li:nth-child(odd):focus,
+  li:nth-child(odd):hover,
+  li:nth-child(even):focus,
+  li:nth-child(even):hover {
+    transform-origin: center;
+    transform: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  ul {
+    padding: 0;
+  }
 }
 
 
@@ -267,7 +439,7 @@ li:hover {
 #jumbotron > div {
   background-color: var(--darkest);
   display: flex;
-  height: 39.0625rem;
+  height: var(--jumbotron-height);
   width: 100%;
 }
 
@@ -283,19 +455,22 @@ li:hover {
   z-index: 5;
 }
 
-#jumbotron h1 {
-  background-color: var(--brightest);
-  color: var(--darkest);
-  opacity: 0.6;
-  padding: 0.5rem 1rem 1.1rem 1rem;
-  transition: all 0.2s;
-  z-index: 10;
+@media only screen and (max-width: 1170px) {
+  #jumbotron > div {
+    height: 35rem;
+  }
 }
 
-#jumbotron h1:focus,
-#jumbotron h1:hover {
-  color: var(--blue);
-  opacity: 0.8;
+@media only screen and (max-width: 800px) {
+  #jumbotron > div {
+    height: 30rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #jumbotron > div {
+    height: 25rem;
+  }
 }
 
 
@@ -306,7 +481,11 @@ li:hover {
 }
 
 #projects li {
-  margin: 3rem 2rem 0 2rem;
+  margin: 3rem 2rem 2rem 2rem;
+}
+
+#projects li:nth-child(n+5) {
+  margin-bottom: 0;
 }
 
 #projects figure {
@@ -318,6 +497,7 @@ li:hover {
 #projects img {
   opacity: 0.5;
   transition: all 0.4s;
+  width: 100%
 }
 
 #projects img + figcaption {
@@ -331,7 +511,8 @@ li:hover {
 
 #projects figure:focus figcaption,
 #projects figure:hover figcaption {
-  bottom: 8.9rem;
+  /* bottom: 8.8rem; */
+  transform: translatey(-100%);
 }
 
 #projects figcaption {
@@ -339,7 +520,7 @@ li:hover {
   color: var(--brightest);
   padding: 1.2rem;
   position: relative;
-  bottom: -8.9rem;
+  /* bottom: -8.8rem; */
 }
 
 #projects h3,
@@ -357,18 +538,81 @@ li:hover {
 
 #projects a {
   background-color: transparent;
-  border: 2px solid var(--brightest);
+  border: 1px solid var(--brightest);
   border-radius: 0.2rem;
   color: var(--brightest);
   margin-right: 1rem;
   padding: 0.15rem 0.6rem;
   transition: all 0.2s;
+
+  /* Flickering fix */
+    /* transform: translateZ(0) scale(1.0, 1.0); */
+    backface-visibility: hidden;
 }
 
 #projects a:focus,
 #projects a:hover {
   background-color: var(--brightest);
   color: var(--blue);
+}
+
+@media only screen and (max-width: 1170px) {
+  /* #projects ul {
+    padding: 0;
+  } */
+  #projects li {
+    margin-left: 0;
+    margin-right: 0;
+    width: 42rem;
+  }
+  #projects li:nth-child(5) {
+    margin-bottom: 2rem;
+  }
+  #projects figure {
+    height: 28rem;
+  }
+  /* li:nth-child(odd):focus,
+  li:nth-child(odd):hover,
+  li:nth-child(even):focus,
+  li:nth-child(even):hover {
+    transform-origin: center;
+  } */
+}
+
+@media only screen and (max-width: 800px) {
+  #projects li {
+    width: 30rem;
+  }
+  #projects figure {
+    height: 20rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  li {
+    border-radius: 0;
+  }
+  #projects li {
+    width: 100%;
+  }
+  #projects figure {
+    border-radius: 0;
+    height: auto;
+    height: 25rem;
+  }
+  #projects img {
+    height: inherit;
+    object-fit: none;
+    object-position: top;
+  }
+  #projects figcaption {
+    bottom: 0;
+    position: sticky;
+  }
+  #projects figure:focus figcaption,
+  #projects figure:hover figcaption {
+    transform: none;
+  }
 }
 
 /* Skills */
@@ -383,14 +627,14 @@ li:hover {
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 2rem 5rem;
+  padding: 2rem 4rem;
 }
 
 #skills h4 {
   font-weight: 400;
   margin-bottom: 1rem;
   text-align: center;
-  padding: 0.2rem;
+  padding: 0.2rem;;
 }
 
 #skills h4:focus,
@@ -405,20 +649,20 @@ li:hover {
   }
 
   25% {
-    transform: scale(1.1) rotateZ(4deg);
+    transform: scale(1.02) rotateZ(4deg);
   }
 
   50% {
-    transform: scale(1.2) rotateZ(-2.5deg);
+    transform: scale(1.04) rotateZ(-2.5deg);
   }
 
   75% {
-    transform: scale(1.3) rotateZ(1deg);
+    transform: scale(1.08) rotateZ(1deg);
   }
 
   100% {
     color: var(--blue);
-    transform: scale(1.4) rotateZ(0deg);
+    transform: scale(1.12) rotateZ(0deg);
     background-color: var(--brightest);
     border-radius: 0.2rem;
     letter-spacing: 0.3rem;
@@ -427,6 +671,12 @@ li:hover {
 
 #skills h4:last-child {
   margin-bottom: 0;
+}
+
+@media only screen and (max-width: 400px) {
+  #skills ul {
+    /* padding: none; */
+  }
 }
 
 
@@ -441,6 +691,9 @@ li:hover {
 
 #education h3 {
   margin-bottom: 2rem;
+  /* Flickering fix */
+    transform: translateZ(0) scale(1.0, 1.0);
+    backface-visibility: hidden
 }
 
 .education-info {
@@ -464,7 +717,7 @@ li:hover {
 
 #education a {
   background-color: var(--darkest);
-  border: 2px solid var(--darkest);
+  border: 1px solid var(--darkest);
   border-radius: 0.2rem;
   color: var(--brightest);
   opacity: 0;
@@ -482,6 +735,18 @@ li:hover {
   background-color: var(--brightest);
   color: var(--blue)!important;
 }
+
+
+
+@media only screen and (max-width: 400px) {
+  #education li,
+  #skills li {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
 
 
 /* Contact */
@@ -523,7 +788,7 @@ button:focus {
   color: var(--brightest);
   font-family: var(--main-text);
   background-color: var(--darkest);
-  border: 2px solid var(--darkest);
+  border: 1px solid var(--darkest);
   height: 2.5rem;
   transition: all 0.2s;
   width: 5.5rem;
@@ -541,14 +806,37 @@ button:focus {
   transform-origin: left top;
 }
 
+@media only screen and (max-width: 800px) {
+  #send {
+    margin: auto;
+    margin-top: 2rem;
+  }
+  #send:focus,
+  #send:hover {
+    transform-origin: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    width: 100%;
+  }
+  #name,
+  #mail,
+  #message {
+    border-radius: 0;
+  }
+}
+
 /* FOOTER */
 
 footer {
+  align-items: center;
   display: flex;
   font-size: 3.5rem;
-  justify-content: center;
-  align-items: center;
   height: 10rem;
+  justify-content: center;
+  position: relative;
 }
 
 footer .container {
@@ -562,7 +850,7 @@ footer i {
 
 footer i:focus,
 footer i:hover {
-  transform: scale(1.2rem);
+  transform: scale(1.2);
   color: var(--bright);
 }
 

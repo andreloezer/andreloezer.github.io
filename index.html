@@ -2,6 +2,9 @@
 <html>
   <head>
 
+    <!-- Prevent indexation -->
+    <meta name="robots" content="noindex">
+
     <!-- Encoding UTF-8 -->
     <meta charset="utf-8">
 
@@ -29,8 +32,8 @@
 
   </head>
 
-  <body>
-    <header>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50" class="scrollspy-example">
+    <header class="navbar-fixed-top">
       <div class="container">
         <div id="logo-box">
           <a href="#">
@@ -41,11 +44,18 @@
           <a class="header-text" href="#">André César Loezer</a>
         </div>
 
-        <nav>
-          <a class="header-text" href="#projects">Projects</a>
+        <nav class="desktop">
+          <a class="header-text" href="#projects">Portifolio</a>
           <a class="header-text" href="#skills">Skills</a>
           <a class="header-text" href="#education">Education</a>
           <a class="header-text" href="#contact">Contact</a>
+        </nav>
+
+        <nav class="mobile">
+          <a class="header-text" href="#projects"><i class="fas fa-briefcase"></i></a>
+          <a class="header-text" href="#skills"><i class="fas fa-wrench"></i></a>
+          <a class="header-text" href="#education"><i class="fas fa-graduation-cap"></i></a>
+          <a class="header-text" href="#contact"><i class="fas fa-envelope"></i></a>
         </nav>
       </div>
     </header>
@@ -61,11 +71,11 @@
 
       <section id="projects">
         <div class="container">
-        <h2>Projects</h2>
+        <h2>Portifolio</h2>
         <ul>
           <li id="colmar-academy">
             <figure>
-              <img src="resources/images/colmar-480x320.jpg" alt="colmar academy" />
+              <img src="resources/images/colmar-600x400.jpg" alt="colmar academy" />
               <figcaption>
                 <h4>Colmar Academy</h4>
                 <p>Landing Page of a web development school</p>
@@ -79,7 +89,7 @@
 
           <li id="trackster">
             <figure>
-              <img src="resources/images/trackster-480x320.jpg" alt="trackster" />
+              <img src="resources/images/trackster-600x400.jpg" alt="trackster" />
               <figcaption>
                 <h4>Trackster</h4>
                 <p>A Last.fm-powered music searching and sorting app</p>
@@ -93,7 +103,7 @@
 
           <li id="match-game">
             <figure>
-              <img src="resources/images/match-game-480x320.jpg" alt="match-game" />
+              <img src="resources/images/match-game-600x400.jpg" alt="match-game" />
               <figcaption>
                 <h4>Match Game</h4>
                 <p>A card-matching game</p>
@@ -107,7 +117,7 @@
 
           <li id="jumpstart">
             <figure>
-              <img src="resources/images/jumpstart-480x320.jpg" alt="jumpstart" />
+              <img src="resources/images/jumpstart-600x400.jpg" alt="jumpstart" />
               <figcaption>
                 <h4>Jumpstart</h4>
                 <p>Landing page for a startup</p>
@@ -121,7 +131,7 @@
 
           <li id="tea-cozy">
             <figure>
-              <img src="resources/images/tea-cozy-480x320.jpg" alt="tea-cozy" />
+              <img src="resources/images/tea-cozy-600x400.jpg" alt="tea-cozy" />
               <figcaption>
                 <h4>Tea Cozy</h4>
                 <p>A tea shop website</p>
@@ -135,7 +145,7 @@
 
           <li id="fotomatic">
             <figure>
-              <img src="resources/images/fotomatic-480x320.jpg" alt="fotomatic" />
+              <img src="resources/images/fotomatic-600x400.jpg" alt="fotomatic" />
               <figcaption>
                 <h4>Fotomatic</h4>
                 <p>Photography website</p>
@@ -219,21 +229,28 @@
         </div>
       </section>
 
-      <footer>
-        <div class="container buttons">
-          <a href="https://github.com/andreloezer" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-      </footer>
-
-      <!-- CDN jQuery -->
-      <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
-
-      <!-- CDN jQuery-UI -->
-      <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script> -->
-
-      <!-- Script -->
-      <!-- <script src="./resources/js/script.js"></script> -->
     </main>
+
+    <footer>
+      <div class="container buttons">
+        <a href="https://github.com/andreloezer" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </footer>
+
+
+    <!-- CDN jQuery -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
+
+    <!-- CDN Bootstrap -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+
+    <!-- CDN jQuery-UI -->
+    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script> -->
+
+    <!-- Script -->
+    <script src="./resources/js/classie.js"></script>
+    <script src="./resources/js/cbpAnimatedHeader.js"></script>
+    <!-- <script src="./resources/js/script.js"></script> -->
 
   </body>
 </html>
